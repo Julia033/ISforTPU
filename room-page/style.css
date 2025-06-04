@@ -1,0 +1,347 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--белый);
+  color: var(--черный);
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+/* Боковое меню */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: var(--кнопка_выбран_этаж);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+
+.top-icons, .bottom-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.bottom-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px; 
+}
+
+.icon img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  padding: 30px 50px;
+  margin-left: 80px; /* ширина меню */
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--черный);
+}
+
+/* Кнопки этажей */
+.floor-buttons {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.floor-btn {
+  padding: 8px 16px;
+  background-color: var(--кнопка_этажи);
+  border: none;
+  border-radius: 999px; /* плашка */
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--темно_серый);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease;
+}
+
+.floor-btn.active {
+  background-color: var(--кнопка_выбран_этаж);
+  font-weight: 600;
+}
+
+/* Сетка комнат */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+  gap: 20px;
+}
+
+.room-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px; /* Было 20px, теперь меньше */
+}
+
+
+.room-card {
+  background-color: var(--кнопка_выбран_этаж);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 200px;
+  width: 160px;
+}
+
+.room-number {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Сетка для студентов и "+" */
+.room-occupants {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 12px;
+  column-gap: 10px;
+  width: 100%;
+  justify-items: center;
+}
+
+/* Общая структура ячейки */
+.student,
+.free-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 60px;
+  height: 75px;
+}
+
+/* Студент */
+.student img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 4px;
+  object-fit: cover;
+}
+
+.student div {
+  font-size: 13px;
+  color: var(--серый);
+  text-align: center;
+}
+
+/* Кружок "+" */
+.plus-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--фон);
+  color: var(--белый);
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.plus-icon:hover {
+  background-color: var(--плюс_навед);
+}
+
+/* Пустая подпись (для выравнивания с ФИО) */
+.plus-label {
+  font-size: 13px;
+  color: var(--серый);
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Нет данных */
+.no-data {
+  margin-top: 30px;
+  text-align: center;
+  color: var(--серый);
+  font-size: 16px;
+  display: none;
+}
+
+.room-scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.scroll-btn {
+  display: none; /* по умолчанию скрыты */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  border: 2px solid var(--черный);
+  background-color: var(--фон);
+  color: var(--черный);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.scroll-btn.left {
+  left: -18px; /* Чуть выдвигается изнутри, но НЕ на боковое меню */
+}
+
+.scroll-btn.right {
+  right: -18px;
+}
+
+.room-scroll-area {
+  overflow-x: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#row-even {
+  margin-top: 40px;
+}
+
+/*кнопка*/
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: white;
+  border: 1px solid #388e3c;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.floating-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Модальное затемнение */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Скрытое состояние */
+.modal.hidden {
+  display: none;
+}
+
+/* Контейнер модального окна */
+.modal-content {
+  background: #d5e3cc;
+  padding: 24px 28px;
+  border-radius: 16px;
+  width: 360px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Текст в модалке */
+.modal-body {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Подвал с кнопками */
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Стили кнопок */
+.modal-footer button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Подтвердить */
+.modal-footer .confirm-btn {
+  background-color: #4caf50;
+  color: white;
+}
+.modal-footer .confirm-btn:hover {
+  background-color: #45a049;
+}
+
+/* Отмена */
+.modal-footer .cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+.modal-footer .cancel-btn:hover {
+  background-color: #ddd;
+}
+

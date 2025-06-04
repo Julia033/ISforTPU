@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Журнал актов</title>
+    <link rel="stylesheet" href="../student-page/color.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../window/message-modal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="top-icons">
+                <div class="icon"><img src="images/home-icon.png" alt="Главная" id="home-button"></div>
+                <div class="icon"><img src="images/rooms-icon.png" alt="Комнаты" id="rooms-button"></div>
+                <div class="icon"><img src="images/journal-icon.png" alt="Журнал" id="journal-button"></div>
+                <div class="icon"><img src="images/report-icon.png" alt="Отчеты" id="report-button"></div>
+            </div>
+            <div class="bottom-icon">
+                <div class="icon"><img src="images/exit-icon.png" alt="Выход" id="exit-button"></div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="header-row">
+                <h1>Журнал актов</h1>
+                <button id="clear-filters-btn" style="display: none;">Сбросить фильтры</button>
+            </div>
+
+
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 20px;">№</th>
+                            <th style="width: 280px;">ФИО студента <img class="filter-icon fio-filter"
+                                    src="images/search.png" alt="фильтр"></th>
+                            <th style="width: 180px;">Нарушение <img class="filter-icon offence-filter"
+                                    src="images/filter-icon.png" alt="фильтр"></th>
+                            <th style="width: 130px;">Дата <span id="sort-arrow"
+                                    style="font-size: 12px; margin-left: 4px;"></span></th>
+                            <th style="width: 160px;">Первое/повторное <img class="filter-icon type-filter"
+                                    src="images/filter-icon.png" alt="фильтр"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="journal-table-body">
+                        <tr>
+                            <td colspan="5" class="no-data">Нет данных</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <button id="open-message-btn" class="floating-btn">
+        <img src="../window/message-icon.png" alt="Сообщения">
+    </button>
+
+    <script src="script.js"></script>
+    <script src="../window/message-modal.js"></script>
+</body>
+
+
+
+
+</html>

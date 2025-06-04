@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Карточка студента</title>
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="certificate-modal.css">
+    <link rel="stylesheet" href="../window/message-modal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="top-icons">
+                <div class="icon"><img src="images/home-icon.png" alt="Главная" id="home-button"></div>
+                <div class="icon"><img src="images/rooms-icon.png" alt="Комнаты" id="rooms-button"></div>
+                <div class="icon"><img src="images/journal-icon.png" alt="Журнал" id="journal-button"></div>
+                <div class="icon"><img src="images/report-icon.png" alt="Отчеты" id="report-button"></div>
+            </div>
+            <div class="bottom-icon">
+                <div class="icon"><img src="images/exit-icon.png" alt="Выход" id="exit-button"></div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="back-button" onclick="history.back()">← Назад</div>
+
+            <div class="profile-header">
+                <div class="photo-column">
+                    <img class="profile-photo" src="images/nophoto.jpg" alt="Фото студента" />
+                    <div class="student-number" id="student-number">—</div>
+                </div>
+
+                <div class="profile-main-info">
+                    <h2 id="full-name">Загрузка...</h2>
+                    <div class="info-columns">
+                        <div class="info-column" id="left-info">
+                            <!-- Личные данные -->
+                        </div>
+                        <div class="profile-divider"></div>
+                        <div class="info-column" id="right-info">
+                            <!-- Проживание -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="accordion-divider" />
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-toggle">Общая информация</button>
+                    <div class="accordion-content">
+                        <p>Паспорт: —</p>
+                        <p>Кем выдан: —</p>
+                        <p>Дата выдачи: —</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-toggle">Оплата</button>
+                    <div class="accordion-content" id="accounting-block">
+                        <p>Нет данных</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-toggle">Нарушения</button>
+                    <div class="accordion-content" id="offences-block">
+                        <p>Нет записей</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-toggle">Справки</button>
+                    <div class="accordion-content" id="certificates-block">
+                        <p>Нет данных</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="button-divider" />
+
+            <div class="action-buttons">
+                <div class="left-buttons">
+                    <button class="restricted-btn" onclick="openCertificateModal()">Добавить справку</button>
+                    <button class="restricted-btn" onclick="openViolationModal()">Добавить нарушение</button>
+                    <button class="restricted-btn" onclick="openTransferPage()">Переселить</button>
+                    <button class="restricted-btn" onclick="openEvictModal()">Выселить</button>
+
+                </div>
+                <div class="right-button">
+                    <button class="write-btn" id="open-message-btn">Написать ✉️</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../window/message-modal.js"></script>
+    <script src="evict-modal.js"></script>
+    <script src="violation-modal.js"></script>
+    <script src="certificate-modal.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

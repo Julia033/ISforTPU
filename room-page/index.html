@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Карта комнат</title>
+  <link rel="stylesheet" href="../student-page/color.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../window/message-modal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="top-icons">
+        <div class="icon"><img src="images/home-icon.png" alt="Главная" id="home-button"></div>
+        <div class="icon"><img src="images/rooms-icon.png" alt="Комнаты" id="rooms-button"></div>
+        <div class="icon"><img src="images/journal-icon.png" alt="Журнал" id="journal-button"></div>
+        <div class="icon"><img src="images/report-icon.png" alt="Отчеты" id="report-button"></div>
+      </div>
+      <div class="bottom-icon">
+        <div class="icon"><img src="images/exit-icon.png" alt="Выход" id="exit-button"></div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <h1 id="dorm-title">Общежитие №1</h1>
+      <div class="floor-buttons">
+        <button class="floor-btn active" data-floor="1">1 этаж</button>
+        <button class="floor-btn" data-floor="2">2 этаж</button>
+        <button class="floor-btn" data-floor="3">3 этаж</button>
+        <button class="floor-btn" data-floor="4">4 этаж</button>
+        <button class="floor-btn" data-floor="5">5 этаж</button>
+      </div>
+
+      <div class="room-scroll-wrapper">
+        <button class="scroll-btn left" id="scroll-left">&#8592;</button>
+        <div class="room-scroll-area" id="scroll-container">
+          <div class="room-scroll-inner">
+            <div id="row-odd" class="room-row"></div>
+            <div id="row-even" class="room-row"></div>
+          </div>
+        </div>
+        <button class="scroll-btn right" id="scroll-right">&#8594;</button>
+      </div>
+
+      <div id="empty-message" class="no-data">Нет информации</div>
+    </main>
+  </div>
+
+  <button id="open-message-btn" class="floating-btn">
+    <img src="../window/message-icon.png" alt="Сообщения">
+  </button>
+
+  <!-- Подключение JS-файлов в правильном порядке -->
+  <script src="script.js"></script>
+  <script src="../student-page/transfer-modal.js"></script>
+  <script src="../window/message-modal.js"></script>
+</body>
+</html>

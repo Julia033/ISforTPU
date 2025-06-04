@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вход — ТПУ</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-overlay">
+    <div class="login-container">
+      <img src="images/logo.png" alt="ТПУ" class="logo">
+      
+      <!-- Добавлен id для формы -->
+      <form id="login-form">
+        <!-- Добавлены id для полей -->
+        <input type="text" id="username" placeholder="Логин" required>
+        <div id="email-error" class="error-message"></div>
+        <input type="password" id="password" placeholder="Пароль" required>
+        <button type="submit">Войти</button>
+      </form>
+      
+    </div>
+  </div>
+
+  <!-- Подключаем JS-файл -->
+  <script src="login.js"></script>
+</body>
+</html>

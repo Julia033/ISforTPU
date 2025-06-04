@@ -1,0 +1,138 @@
+/* Общие настройки */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--белый);
+  color: var(--черный);
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+/* Боковое меню */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: var(--кнопка_выбран_этаж);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+
+.top-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.bottom-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px; 
+}
+
+
+.icon img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* Основной контент */
+.content {
+  flex: 1;
+  padding: 30px 50px;
+  margin-left: 80px; /* ширина меню */
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--черный);
+  margin-bottom: 30px;
+}
+
+/* Сетка карточек */
+.dorm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+
+/* Карточка общежития */
+.dorm-card {
+  background-color: var(--кнопка_выбран_этаж);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--черный50);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dorm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px var(--черный50);
+}
+
+.dorm-card h2 {
+  font-size: 16px;
+  margin: 0 0 5px 0;
+  color: var(--черный);
+}
+
+.dorm-card p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: var(--темно_серый);
+}
+
+/* Заведующий */
+.person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.person div {
+  color: var(--темно_серый);
+  font-size: 14px;
+}
+
+.person img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Если данных нет */
+.no-data {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--темно_серый);
+  display: none;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,171 @@
+/* Затемнение фона */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Скрытое состояние */
+.modal.hidden {
+  display: none;
+}
+
+/* Всплывающее окно */
+.modal-content {
+  background: #d5e3cc;
+  padding: 24px 28px;
+  border-radius: 16px;
+  width: 340px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  /* Удаляем конфликтующее: */
+  /* align-items: center; */
+  /* text-align: center; */
+}
+
+
+/* Анимация */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Шапка */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+/* Содержимое формы */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+label {
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+select,
+input[type="date"] {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Блок с двумя датами */
+.modal-body .date-range {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-range input {
+  flex: 1;
+}
+
+/* Кнопка */
+.submit-btn {
+  margin-top: 12px;
+  background-color: #86c88e;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #6db674;
+}
+
+
+/* Текст внутри окна */
+.modal-body {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Кнопки */
+.modal-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal-footer button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Кнопка "Да, выселить" */
+.modal-footer .confirm-btn {
+  background-color: var(--кнопка) !important;
+  color: white;
+}
+
+.modal-footer .confirm-btn:hover {
+  background-color: var(--кнопка) !important;
+}
+
+/* Кнопка "Отмена" */
+.modal-footer .cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.modal-footer .cancel-btn:hover {
+  background-color: #ddd;
+}

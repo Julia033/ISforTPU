@@ -1,0 +1,42 @@
+<div id="messageModal" class="message-modal hidden">
+  <div class="message-modal-content">
+    <div class="message-modal-top-row">
+      <button id="newMessageBtn" class="message-write-btn">Написать</button>
+      <div class="message-recipient-select hidden" id="recipientWrapper">
+        Кому отправить:
+        <select id="recipientSelect">
+          <option>7 этаж</option>
+          <option>6 этаж</option>
+        </select>
+      </div>
+      <button class="message-close-btn">✕</button>
+    </div>
+
+    <div class="message-modal-body">
+      <div class="message-tabs">
+        <div class="message-tab active" data-tab="inbox">Входящие</div>
+        <div class="message-tab" data-tab="sent">Отправленные</div>
+      </div>
+
+      <div class="message-tab-contents">
+        <div id="inbox" class="message-tab-content">
+          <div class="message-card new">
+            <div class="message-card-header">Новый вопрос <span class="message-reply-icon">↩</span></div>
+            <div class="message-card-body">
+              <strong>Иван Иванов</strong><br>Комната 720<br>
+              Здравствуйте! В комнате 720 холодные трубы, можно вызвать сантехника?
+            </div>
+          </div>
+        </div>
+        <div id="sent" class="message-tab-content hidden">
+          <!-- Отправленные -->
+        </div>
+      </div>
+    </div>
+
+    <div class="message-modal-footer">
+      <input type="text" class="message-input" placeholder="Введите сообщение..." />
+      <button class="message-send-btn">Отправить</button>
+    </div>
+  </div>
+</div>

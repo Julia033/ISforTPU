@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 80px;
+  background-color: var(--кнопка_выбран_этаж);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  
+}
+
+.top-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.icon img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+
+.content {
+  flex: 1;
+  padding: 30px 50px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 18px; /* меньше — подзаголовки */
+  font-weight: 600;
+}
+
+
+.layout {
+  display: flex;
+  margin-top: 30px;
+  gap: 60px;
+}
+
+.report-list {
+  min-width: 250px;
+  border-right: 1px solid var(--черный50);
+  padding-right: 40px;
+}
+
+
+.report-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.report-list li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.report-list .active {
+  font-weight: 600;
+}
+
+.report-params label {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.report-params input,
+.report-params select {
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: 180px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--плюс_навед);
+  color: var(--черный);
+  border: none;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.report-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#search-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#search-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  margin: 10px 0 15px 0;
+  display: none; /* скрыт по умолчанию */
+}
+
+/*кнопка*/
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: white;
+  border: 1px solid #388e3c;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.floating-btn img {
+  width: 30px;
+  height: 30px;
+}
+

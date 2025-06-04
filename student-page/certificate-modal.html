@@ -1,0 +1,28 @@
+<div id="certificateModal" class="modal hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Добавить справку</h2>
+      <button class="close-btn" onclick="closeCertificateModal()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div>
+        <label for="certificateType">Тип справки</label>
+        <select id="certificateType">
+          <option disabled selected></option>
+        </select>
+      </div>
+
+      <div>
+        <label>Период действия</label>
+        <div class="date-range">
+          <input type="date" id="startDate">
+          <span>—</span>
+          <input type="date" id="endDate">
+        </div>
+      </div>
+
+      <button id="submitCertificate" class="submit-btn">Добавить</button>
+    </div>
+  </div>
+</div>

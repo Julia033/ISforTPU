@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--белый);
+  color: var(--черный);
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+/* Боковое меню */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: var(--кнопка_выбран_этаж);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+
+.top-icons,
+.bottom-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.bottom-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.icon img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  padding: 30px 50px;
+  margin-left: 80px;
+  /* ширина меню */
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--черный);
+}
+
+.table-wrapper {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  /* ← смыкание ячеек */
+  border: 1px solid black;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 6px 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+  /* выравнивание по вертикали */
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  text-align: center;
+  /* выравнивание по центру только для № */
+}
+
+/* Поля ввода */
+th input {
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 2px 4px;
+  box-sizing: border-box;
+}
+
+th input:focus {
+  border-bottom: 1px solid black;
+}
+
+/* Красивый <select> */
+th select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  padding: 2px 24px 2px 4px;
+  font-family: inherit;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M2 4l4 4 4-4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+th select:focus {
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+th option {
+  background: #fff;
+  color: #000;
+  font-size: 13px;
+}
+
+thead th {
+  padding: 10px;
+  text-align: center;
+  background-color: var(--плюс_навед);
+  font-weight: 600;
+  border: 1px solid var(--черный);
+  color: var(--черный);
+}
+
+tbody td {
+  padding: 10px;
+  border: 1px solid var(--черный);
+  color: var(--черный);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--белый);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--кнопка_выбран_этаж);
+}
+
+
+.filter-icon {
+  width: 14px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: var(--черный);
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-row h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#clear-filters-btn {
+  background-color: var(--плюс_навед);
+  color: var(--черный);
+  border: 1px solid var(--черный);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#clear-filters-btn:hover {
+  background-color: var(--кнопка_этажи);
+}
+
+/*кнопка*/
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: white;
+  border: 1px solid #388e3c;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.floating-btn img {
+  width: 30px;
+  height: 30px;
+}

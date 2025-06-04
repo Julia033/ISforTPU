@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Формирование отчета</title>
+    <link rel="stylesheet" href="../student-page/color.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../window/message-modal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="top-icons">
+                <div class="icon"><img src="images/home-icon.png" alt="Главная" id="home-button"></div>
+                <div class="icon"><img src="images/rooms-icon.png" alt="Комнаты" id="rooms-button"></div>
+                <div class="icon"><img src="images/journal-icon.png" alt="Журнал" id="journal-button"></div>
+                <div class="icon"><img src="images/report-icon.png" alt="Отчеты" id="report-button"></div>
+            </div>
+            <div class="bottom-icon">
+                <div class="icon"><img src="images/exit-icon.png" alt="Выход" id="exit-button"></div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <h1>Формирование отчета</h1>
+            <div class="layout">
+                <div class="report-list">
+                    <div class="report-header">
+                        <h2 id="report-title">Список отчетов</h2>
+                        <img src="images/search.png" alt="Поиск" id="search-icon">
+                    </div>
+                    <input type="text" id="search-input" placeholder="Поиск отчета">
+
+                    <ul id="report-list">
+                        <li class="active" data-report="debtors">Должники по оплате</li>
+                        <li data-report="residents">Проживающие в общежитии</li>
+                        <li data-report="free">Свободные комнаты</li>
+                        <li data-report="distribution">Расселение по общежитиям</li>
+                    </ul>
+                </div>
+                <div class="report-params" id="report-params">
+                    <h2>Параметры отчета</h2>
+                    <div id="report-form">
+                        <label>Период</label><br>
+                        <input type="date">
+                        <input type="date"><br><br>
+
+                        <label>Общежитие</label><br>
+                        <select id="dorm-select">
+                            <option value="">Все общежития</option>
+                        </select><br><br>
+
+                        <button>Сформировать</button>
+                    </div>
+                    <div id="report-placeholder"
+                        style="display:none; font-style: italic; color: gray; margin-top: 20px;">
+                        Отчет находится в разработке
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <button id="open-message-btn" class="floating-btn">
+        <img src="../window/message-icon.png" alt="Сообщения">
+    </button>
+
+    <script src="script.js"></script>
+    <script src="../window/message-modal.js"></script>
+</body>
+
+</html>
